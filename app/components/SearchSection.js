@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import userdata from "./userdata.json"; // Import the JSON file
-import UserDetailsModal from "./UserDetailsModal";
+import UserDetailsModal from "./userDetailsModal";
 
 export default function SearchSection() {
   const [searchQuery, setSearchQuery] = useState("");

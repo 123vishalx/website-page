@@ -14,23 +14,15 @@ export default function UserDetailsModal({ isOpen, user, onClose }) {
       <div className="bg-white rounded-lg shadow-lg w-[299px] md:w-[472px] h-auto p-6">
         {/* Modal Header */}
         <h2 className="text-xl font-bold mb-4">Fetch Details</h2>
-        <p className="text-sm text-gray-600 mb-4
+        <p className="text-sm text-gray-600 mb-4">
           Here are the details of the following employee:
         </p>
 
         {/* User Information */}
         {user ? (
-          <div className="flex items-start gap-4">
-            {/* Profile Image */}
-            <img
-              src={user.profile_image || defaultImage}
-              alt="Profile"
-              className="w-24 h-24 rounded-md items-start object-cover"
-              onError={(e) => (e.target.src = defaultImage)} // Fallback to default image on error
-            />
-
+          <div>
             {/* User Details */}
-            <div>
+            <div className="mb-4">
               <p className="text-base text-gray-800">
                 <strong>Name:</strong> {user.first_name} {user.last_name}
               </p>
@@ -40,6 +32,16 @@ export default function UserDetailsModal({ isOpen, user, onClose }) {
               <p className="text-base text-gray-800">
                 <strong>Contact Number:</strong> {user.contact_number || "N/A"}
               </p>
+            </div>
+
+            {/* Profile Image */}
+            <div className="flex justify-center">
+              <img
+                src={user.profile_image || defaultImage}
+                alt="Profile"
+                className="w-24 h-24 rounded-md object-cover"
+                onError={(e) => (e.target.src = defaultImage)} // Fallback to default image on error
+              />
             </div>
           </div>
         ) : (
