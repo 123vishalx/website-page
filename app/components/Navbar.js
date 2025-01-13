@@ -14,12 +14,12 @@ export default function Navbar() {
             <img
               src="https://girmantech.com/Logo2.svg"
               alt="Girman Technologies Logo"
-              className="h-15 w-auto lg:ml-24" // Logo height set to 60px
+              className="h-15 w-auto lg:ml-24" 
             />
           </a>
         </div>
 
-        {/* Desktop Menu */}
+        
         <div className="hidden md:flex space-x-8 lg:mr-28">
           <a
             href="#"
@@ -47,7 +47,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+      
         <button
           className="md:hidden flex items-center text-gray-800 hover:text-blue-500"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -69,7 +69,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+     
       {isMobileMenuOpen && (
         <div
           className="absolute top-16 right-4 bg-white shadow-lg rounded-lg w-40 p-4 z-50"

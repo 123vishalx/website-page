@@ -7,8 +7,8 @@ import UserDetailsModal from "./userDetailsModal";
 export default function SearchSection() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null); // State for the selected user
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [selectedUser, setSelectedUser] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -25,18 +25,18 @@ export default function SearchSection() {
   }, [searchQuery]);
 
   const handleFetchDetails = (user) => {
-    setSelectedUser(user); // Set the selected user
-    setIsModalOpen(true); // Open the modal
+    setSelectedUser(user); 
+    setIsModalOpen(true); 
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
-    setSelectedUser(null); // Reset selected user
+    setIsModalOpen(false); 
+    setSelectedUser(null);
   };
 
   return (
     <div className="bg-gradient-to-b from-white to-blue-100 min-h-screen p-4">
-      {/* Centered Logo Section (Hidden on small screens) */}
+      
       <div className="flex justify-center mb-6 md:mb-0 mt-6">
         <img
           src="https://girmantech.com/Logo2.svg"
@@ -45,7 +45,7 @@ export default function SearchSection() {
         />
       </div>
 
-      {/* Search Input */}
+    
       <div className="flex justify-center mb-6 mt-10">
         <div className="relative w-full max-w-[800px]">
           <input
@@ -101,7 +101,7 @@ export default function SearchSection() {
                   borderRadius: "18.29px", // Exact border-radius
                 }}
               >
-                {/* Profile Image */}
+             
                 <div
                   className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mb-4"
                   style={{ borderRadius: "50%" }}
