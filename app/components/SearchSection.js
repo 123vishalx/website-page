@@ -50,7 +50,7 @@ export default function SearchSection() {
         <div className="relative w-full max-w-[800px]">
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search Name"
             className="w-full h-[50px] text-[24px] px-12 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -76,7 +76,7 @@ export default function SearchSection() {
       <div className="max-w-[890px] mx-auto mt-40px">
         {searchQuery.trim() === "" ? (
           <div className="flex justify-center items-center min-h-[400px]">
-            <p className="text-gray-500 text-lg">Start typing to search...</p>
+            <p className="text-gray-500 text-lg">Start typing to search user...</p>
           </div>
         ) : filteredData.length === 0 ? (
           <div className="flex justify-center items-center min-h-[400px]">
@@ -170,4 +170,4 @@ export default function SearchSection() {
       />
     </div>
   );
-}
+} 
