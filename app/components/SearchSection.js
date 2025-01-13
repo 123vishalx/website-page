@@ -9,6 +9,7 @@ export default function SearchSection() {
   const [filteredData, setFilteredData] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null); 
   const [isModalOpen, setIsModalOpen] = useState(false); 
+ 
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -45,7 +46,6 @@ export default function SearchSection() {
         />
       </div>
 
-    
       <div className="flex justify-center mb-6 mt-10">
         <div className="relative w-full max-w-[800px]">
           <input
@@ -101,7 +101,6 @@ export default function SearchSection() {
                   borderRadius: "18.29px", // Exact border-radius
                 }}
               >
-             
                 <div
                   className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mb-4"
                   style={{ borderRadius: "50%" }}
@@ -129,16 +128,28 @@ export default function SearchSection() {
                 </p>
 
                 <div className="border-t border-black-100 pt-4 w-full">
-                  {/* Contact Number with Phone Icon */}
+                  {/* Contact Number with Phone Icon and Copy Button */}
                   <div className="flex justify-between items-center w-full">
-                    <p className="text-sm text-gray-800  mt-2 flex items-center">
+                    <p className="text-sm text-gray-800 mt-2 flex items-center">
                       <img
                         src="https://static.thenounproject.com/png/7399212-512.png"
                         alt="Phone Icon"
                         className="w-5 h-5 mr-2"
                       />
                       {user.contact_number}
+                      <button
+                        onClick={() => navigator.clipboard.writeText(user.contact_number)}
+                        className="ml-2 text-blue-500 hover:text-blue-700"
+                        title="Copy to clipboard"
+                      >
+                        <img
+                          src="https://cdn-icons-png.flaticon.com/512/1827/1827923.png" // Replace with a proper copy icon URL
+                          alt="Copy Icon"
+                          className="w-5 h-5"
+                        />
+                      </button>
                     </p>
+                    
 
                     {/* Fetch Details Button */}
                     <button
